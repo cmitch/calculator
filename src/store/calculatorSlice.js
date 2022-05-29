@@ -9,10 +9,17 @@ export const calculatorSlice = createSlice({
         operation: null,
     },
     reducers: {
-        calculate: (state, action) => {
+        calculateAction: (state, action) => {
             return calculate(state, action.payload)
-        }
+        },
     },
 })
+
+export const { calculateAction } = calculatorSlice.actions;
+
+
+export const selectTotal = (state) => state.calculator.total;
+export const selectNext = (state) => state.calculator.next;
+export const selectOperation = (state) => state.calculator.operation;
 
 export default calculatorSlice.reducer;

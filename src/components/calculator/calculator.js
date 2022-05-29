@@ -1,7 +1,7 @@
 import React from "react";
-import './calculator';
-import ButtonPanel from '../buttonPanel/ButtonPanel';
-import ConnectedDisplay from "../display/ConnectedDisplay";
+import './Calculator';
+import ButtonPanel from '../ButtonPanel/';
+import Display from "../Display/";
 
 
 export default class Calculator extends React.Component {
@@ -9,7 +9,7 @@ export default class Calculator extends React.Component {
   render() {
     return (
       <div className="component-calculator">
-        <ConnectedDisplay />
+        <Display />
         <ButtonPanel />
       </div>
     );

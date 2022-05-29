@@ -1,8 +1,11 @@
-import React from "react";
+import { useDispatch } from 'react-redux';
 import PropTypes from "prop-types";
+import { calculateAction } from '../../store/calculatorSlice';
 import "./Button.css";
 
-const Button = ({handleClick, orange, wide, name}) => {
+const Button = ({orange, wide, name}) => {
+    const dispatch = useDispatch();
+    
     const className = [
         "component-button",
         orange ? "orange" : "",
@@ -11,7 +14,7 @@ const Button = ({handleClick, orange, wide, name}) => {
 
     return (
         <div className={className.join(" ").trim()}>
-            <button onClick={() => handleClick(name)}>{name}</button>
+            <button onClick={() => dispatch(calculateAction(name))}>{name}</button>
         </div>
     );
 }
